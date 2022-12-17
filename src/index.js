@@ -2,15 +2,16 @@ const express = require("express")
 const jwt=require("jsonwebtoken")
 const bcrypt=require("bcrypt")
 const cors=require("cors")
+const PORT=process.env.PORT || 8001
 require("dotenv").config()
 
 
-const {connection} = require("./config/data")
+const {connection} = require("../config/data")
 
 
 // const {UserModel} = require("./model/user.module")
 
-const{PackageRouter}=require("./router/Package.routes")
+const{PackageRouter}=require("../router/Package.routes")
 
 // const{authentication}=require("./middleware/authentication")
 
@@ -25,7 +26,7 @@ app.use(cors({
 }))
 
 app.get("/",(req,res)=>{
-    res.send("welcome")
+    res.send("wel")
 }) 
 
 // app.post("/signup",async (req,res)=>{
@@ -101,7 +102,7 @@ app.get("/",(req,res)=>{
 app.use("/package",PackageRouter)
 
 
-app.listen(process.env.PORT,async()=>{
+app.listen(PORT,async()=>{
     try{
         await connection
         console.log("connection to db cloud")
