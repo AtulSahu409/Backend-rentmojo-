@@ -6,12 +6,12 @@ const PORT=process.env.PORT || 8001
 require("dotenv").config()
 
 
-const {connection} = require("../config/data")
+const {connection} = require("./config/data")
 
 
 // const {UserModel} = require("./model/user.module")
 
-const{PackageRouter}=require("../router/Package.routes")
+const{PackageRouter}=require("./router/Package.routes")
 
 // const{authentication}=require("./middleware/authentication")
 
