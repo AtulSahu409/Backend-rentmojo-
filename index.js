@@ -12,7 +12,7 @@ const {connection} = require("./config/data")
 // const {UserModel} = require("./model/user.module")
 
 const{PackageRouter}=require("./router/Package.routes")
-
+const{PackagetypeRouter}=require("./router/packagetype.routes")
 // const{authentication}=require("./middleware/authentication")
 
 const app=express();
@@ -100,6 +100,7 @@ app.get("/",(req,res)=>{
 
 // app.use(authentication)
 app.use("/package",PackageRouter)
+app.use("/packagetype",PackagetypeRouter)
 
 
 app.listen(PORT,async()=>{
